@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="ru">
 <head>
   <meta charset="UTF-8" />
@@ -51,4 +51,212 @@
 </body>
 </html>
 
+ -->
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ойын - Bilim Platformasy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .game-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .game-header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .game-title {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .game-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    
+    .game-embed {
+      width: 100%;
+      min-height: 600px;
+      border: none;
+    }
+    
+    .materials-section {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .materials-title {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .material-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .material-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      border: 1px solid #e9ecef;
+    }
+    
+    .material-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      border-color: #4b6cb7;
+    }
+    
+    .material-icon {
+      font-size: 1.8rem;
+      color: #4b6cb7;
+      margin-bottom: 10px;
+    }
+    
+    .material-name {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      background: #4b6cb7;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .download-btn:hover {
+      background: #3a56a5;
+    }
+    
+    @media (max-width: 768px) {
+      .game-title {
+        font-size: 2rem;
+      }
+      
+      .game-embed {
+        min-height: 400px;
+      }
+      
+      .material-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .game-title {
+        font-size: 1.8rem;
+      }
+      
+      .game-embed {
+        min-height: 300px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="home-link">
+    <i class="fas fa-arrow-left"></i> Басты бетке оралу
+  </a>
+  
+  <div class="game-page">
+    <div class="game-header">
+      <h1 class="game-title">
+        <i class="fas fa-gamepad"></i> Әмбебап құмсалғыш
+      </h1>
+    </div>
+    
+    <div class="game-container">
+      <!-- Место для вставки игры  -->
+      <iframe class="game-embed" src="game/universe-sandbox.html" allowfullscreen></iframe>
+      
+      <!-- Альтернативный вариант, если игра не загрузилась -->
+      <div class="game-fallback" style="display: none; text-align: center; padding: 40px;">
+        <img src="game/ss_1237a0e77292b04d79d029b9fd3f753adb2f48fa.1920x1080.jpg" alt="Әмбебап құмсалғыш" style="max-width: 100%; border-radius: 8px;">
+        <p style="margin-top: 20px; color: #6c757d;">Ойын жүктелуде... Егер ойын жүктелмесе, <a href="game/universe-sandbox.html" target="_blank">мына сілтеме арқылы</a> ашып көріңіз.</p>
+      </div>
+    </div>
+    
+    <div class="materials-section">
+      <h2 class="materials-title">
+        <i class="fas fa-download"></i> Қосымша материалдар
+      </h2>
+      
+      <div class="material-cards">
+        <div class="material-card">
+          <div class="material-icon">
+            <i class="fas fa-file-pdf"></i>
+          </div>
+          <h3 class="material-name">Жұмыс дәптері</h3>
+          <a href="path/to/workbook.pdf" download class="download-btn">
+            <i class="fas fa-download"></i> Жүктеу
+          </a>
+        </div>
+        
+        <div class="material-card">
+          <div class="material-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 class="material-name">Мұғалімге әдістемелік</h3>
+          <a href="path/to/teacher-guide.pdf" download class="download-btn">
+            <i class="fas fa-download"></i> Жүктеу
+          </a>
+        </div>
+        
+        <div class="material-card">
+          <div class="material-icon">
+            <i class="fas fa-video"></i>
+          </div>
+          <h3 class="material-name">Нұсқаулық бейне</h3>
+          <a href="path/to/video.mp4" download class="download-btn">
+            <i class="fas fa-download"></i> Жүктеу
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <script>
+    // Проверка загрузилась ли игра
+    setTimeout(function() {
+      const iframe = document.querySelector('.game-embed');
+      if (iframe && iframe.contentWindow.document.body.innerHTML === '') {
+        document.querySelector('.game-fallback').style.display = 'block';
+      }
+    }, 3000);
+  </script>
+</body>
+</html>
