@@ -10,13 +10,19 @@
 <body>
   <header>
     <div class="header-container">
-      <h1><i class="fas fa-graduation-cap"></i> Study with Zhami </h1>
+           <h1 class="centered-title">
+      <span class="title-content">
+        <img src="profile/Screenshot 2025-06-07 at 22.55.01.png"Zhami" class="client-avatar">
+        Study with Zhami
+        
+      </span>
+    </h1>
       <div class="nav-buttons">
         <button class="nav-btn active" onclick="showSection('games', this)">
           <i class="fas fa-gamepad"></i> Сабақ үлгілері
         </button>
         <button class="nav-btn" onclick="showSection('books', this)">
-          <i class="fas fa-book"></i> Дидактикалық тапсырмалар 
+          <i class="fas fa-book"></i> Дидактикалық материалдар
         </button>
         <button class="nav-btn" onclick="showSection('experiments', this)">
           <i class="fas fa-flask"></i> Эксперименттер
@@ -73,19 +79,85 @@
     <!-- Секция экспериментов -->
     <section id="experiments" class="content-section">
       <div class="cards-container">
-        <!-- Карточка эксперимента 1 -->
+
         <div class="card">
           <div class="card-image">
-            <img src="experiments/ChatGPT Image May 27, 2025 at 01_43_17 PM.png" alt="Кіріспе бейне сабақ">
+            <img src="experiments/ChatGPT Image Jun 8, 2025 at 06_14_02 PM.png" alt="1-ші эксперимент">
           </div>
           <div class="card-body">
-            <h3>Кіріспе бейне сабақ</h3>
-            <button class="view-btn">
+            <h3>Смартфон арқылы дыбыс жылдамдығын анықтау</h3>
+            <button class="view-btn" onclick="location.href='experiment1-page.html'">
               <i class="fas fa-video"></i> Көру
             </button>
           </div>
         </div>
-        <!-- Добавьте больше карточек экспериментов -->
+
+         <div class="card">
+          <div class="card-image">
+            <img src="experiments/ChatGPT Image Jun 8, 2025 at 06_16_02 PM.png" alt="2-ші эксперимент">
+          </div>
+          <div class="card-body">
+            <h3>Домбыра аспабының дыбыс жиілігін зерттеу және толқын жылдамдығын есептеу</h3>
+            <button class="view-btn" onclick="location.href='experiment2-page.html'">
+              <i class="fas fa-video"></i> Көру
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="experiments/ChatGPT Image Jun 8, 2025 at 06_17_50 PM.png" alt="3-ші эксперимент">
+          </div>
+          <div class="card-body">
+            <h3>Дыбыс толқындарын зерттеу</h3>
+            <button class="view-btn" onclick="location.href='experiment3-page.html'">
+              <i class="fas fa-video"></i> Көру
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="experiments/ChatGPT Image Jun 8, 2025 at 06_45_39 PM.png" alt="4-ші эксперимент">
+          </div>
+          <div class="card-body">
+            <h3>Математикалық маятниктің қозғалысын зерттеу</h3>
+            <button class="view-btn" onclick="location.href='experiment4-page.html'">
+              <i class="fas fa-video"></i> Көру
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="experiments/ChatGPT Image Jun 8, 2025 at 06_49_02 PM.png" alt="5-ші эксперимент">
+          </div>
+          <div class="card-body">
+            <h3>Серіппелі маятниктің қозғалысын зерттеу</h3>
+            <button class="view-btn" onclick="location.href='experiment5-page.html'">
+              <i class="fas fa-video"></i> Көру
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="experiments/ChatGPT Image Jun 8, 2025 at 06_50_50 PM.png" alt="6-ші эксперимент">
+          </div>
+          <div class="card-body">
+            <h3>Доплер эффектісін зерттеу</h3>
+            <button class="view-btn" onclick="location.href='experiment6-page.html'">
+              <i class="fas fa-video"></i> Көру
+            </button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-image">
+            <img src="experiments/ChatGPT Image Jun 8, 2025 at 06_56_12 PM.png" alt="7-ші эксперимент">
+          </div>
+          <div class="card-body">
+            <h3>Доплер эффектісі арқылы дыбыс жылдамдығын анықтау</h3>
+            <button class="view-btn" onclick="location.href='experiment7-page.html'">
+              <i class="fas fa-video"></i> Көру
+            </button>
+          </div>
+        </div>
       </div>
     </section>
   </main>
@@ -95,5 +167,30 @@
   </footer>
 
   <script src="script.js"></script>
+  <script>
+// Восстановление активной вкладки при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+  // Проверяем, есть ли хэш в URL (например, #experiments)
+  if (window.location.hash) {
+    const sectionId = window.location.hash.substring(1);
+    const targetSection = document.getElementById(sectionId);
+    const targetButton = document.querySelector(`.nav-btn[onclick*="${sectionId}"]`);
+    
+    if (targetSection && targetButton) {
+      // Показываем нужную секцию
+      document.querySelectorAll('.content-section').forEach(section => {
+        section.classList.remove('active');
+      });
+      targetSection.classList.add('active');
+      
+      // Активируем нужную кнопку
+      document.querySelectorAll('.nav-btn').forEach(button => {
+        button.classList.remove('active');
+      });
+      targetButton.classList.add('active');
+    }
+  }
+});
+</script>
 </body>
 </html>

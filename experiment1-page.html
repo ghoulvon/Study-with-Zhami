@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Эксперимент - Bilim Platformasy</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .experiment-page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    .experiment-header {
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+    }
+    
+    .experiment-title {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .video-container {
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      overflow: hidden;
+      margin-bottom: 30px;
+    }
+    
+    .experiment-video {
+      width: 100%;
+      min-height: 600px;
+      display: block;
+    }
+    
+    .materials-section {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+    
+    .materials-title {
+      color: #2c3e50;
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .material-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    
+    .material-card {
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 20px;
+      transition: all 0.3s ease;
+      border: 1px solid #e9ecef;
+    }
+    
+    .material-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+      border-color: #4b6cb7;
+    }
+    
+    .material-icon {
+      font-size: 1.8rem;
+      color: #4b6cb7;
+      margin-bottom: 10px;
+    }
+    
+    .material-name {
+      font-weight: 600;
+      margin-bottom: 10px;
+      color: #2c3e50;
+    }
+    
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 15px;
+      background: #4b6cb7;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: all 0.3s ease;
+    }
+    
+    .download-btn:hover {
+      background: #3a56a5;
+    }
+    
+    .experiment-description {
+      background: white;
+      border-radius: 16px;
+      padding: 25px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      line-height: 1.7;
+      color: #495057;
+    }
+    
+    @media (max-width: 768px) {
+      .experiment-title {
+        font-size: 2rem;
+      }
+      
+      .material-cards {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .experiment-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a onclick="goBackToExperiments()" class="home-link">
+    <i class="fas fa-arrow-left"></i> Басты бетке оралу
+  </a>
+
+<script>
+function goBackToExperiments() {
+  // Сохраняем в sessionStorage, что мы возвращаемся из эксперимента
+  sessionStorage.setItem('returningFromExperiment', 'true');
+  // Переходим на главную с якорем #experiments
+  window.location.href = 'index.html#experiments';
+}
+</script>
+  <div class="experiment-page">
+    <div class="experiment-header">
+      <h1 class="experiment-title">                                     
+        <i class="fas fa-flask"></i> Смартфон арқылы дыбыс жылдамдығын анықтау
+      </h1>
+    </div>
+    
+    <div class="experiment-description">
+      <p>Бұл эксперимент арқылы сіз физиканың негізгі заңдарымен танысасыз. Тәжірибе қауіпсіздік ережелерін сақтап, мұғалімнің қадағалауымен жүргізіледі.</p>
+    </div>
+    
+    <div class="video-container">
+      <iframe 
+        class="experiment-video"
+        src="https://www.youtube.com/embed/uszF5ziXE0E" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+        allowfullscreen>
+      </iframe>
+      
+    </div>
+    
+    <div class="materials-section">
+      <h2 class="materials-title">
+        <i class="fas fa-download"></i> Қосымша материалдар
+      </h2>
+      
+      <div class="material-cards">
+        <div class="material-card">
+          <div class="material-icon">
+            <i class="fas fa-file-pdf"></i>
+          </div>
+          <h3 class="material-name">Жұмыс дәптері</h3>
+          <a href="experiments/№1 Зертхана жұмыс дәптері.pdf" download class="download-btn">
+            <i class="fas fa-download"></i> Жүктеу
+          </a>
+        </div>
+        
+        <div class="material-card">
+          <div class="material-icon">
+            <i class="fas fa-chalkboard-teacher"></i>
+          </div>
+          <h3 class="material-name">Мұғалімге әдістемелік</h3>
+          <a href="experiments/Мұғалімге арналған әдістемелік.pdf" download class="download-btn">
+            <i class="fas fa-download"></i> Жүктеу
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
