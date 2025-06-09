@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 
   // Путь к книге
-  const bookUrl = 'books/A Brief History Of Time - From the Big Bang to Black Holes (Stephen Hawing) (Z-Library).pdf';
+  const bookUrl = 'books/Тірек конспектілер.pdf';
 
   document.querySelectorAll('.read-btn').forEach(btn => {
     btn.addEventListener('click', function() {
@@ -116,6 +116,47 @@ document.addEventListener('DOMContentLoaded', function() {
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
+    });
+  });
+});
+
+// Функция для скачивания книги
+function downloadBook(filePath, fileName) {
+  // Создаем временную ссылку
+  const link = document.createElement('a');
+  link.href = filePath;
+  link.download = fileName || 'download';
+  
+  // Добавляем на страницу и кликаем
+  document.body.appendChild(link);
+  link.click();
+  
+  // Удаляем ссылку
+  document.body.removeChild(link);
+}
+
+// Функция для чтения книги онлайн
+function openBookPreview(filePath) {
+  // Открываем PDF в новом окне/вкладке
+  window.open(filePath, '_blank');
+}
+
+// Инициализация кнопок при загрузке страницы
+document.addEventListener('DOMContentLoaded', function() {
+  // Обработчики для всех кнопок "Оқу"
+  document.querySelectorAll('.read-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const bookFile = this.getAttribute('data-book-file') || 'books/default-preview.pdf';
+      openBookPreview(bookFile);
+    });
+  });
+
+  // Обработчики для всех кнопок "Жүктеу"
+  document.querySelectorAll('.download-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      const bookFile = this.getAttribute('data-book-file') || 'books/default.pdf';
+      const bookName = this.getAttribute('data-book-name') || 'Кітап';
+      downloadBook(bookFile, bookName);
     });
   });
 });
